@@ -1,7 +1,19 @@
 <div class="container">
 	<h1>Nuevo usuario</h1>
 
-	<%= form_for(@usuarios) do |u| %>
+	<%= form_for(@usuario) do |u| %>
+		<% if @usuario.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@usuario.errors.count, "error impide") %> que se registre el usuario:</h2>
+			</div>
+
+			<ul>
+				<% @usuario.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		<% end %>
+
 		<div class="form-group">
 			<label><%= u.label :Nombre %></label>
 			<%= u.text_field :nombre, class: "form-control" %>
