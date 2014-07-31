@@ -1,0 +1,19 @@
+<div class="container">
+	<h1>Nuevo usuario</h1>
+
+	<%= form_for(@usuarios) do |u| %>
+		<div class="form-group">
+			<label><%= u.label :Nombre %></label>
+			<%= u.text_field :nombre, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<label><%= u.label :Email %></label>
+			<%= u.text_field :email, class: "form-control" %>
+		</div>
+
+		<%= u.submit 'Crear usuario', class: "btn btn-primary btn-lg btn-block" %>
+	<% end %>
+
+	<%= link_to "Ver Usuarios", users_path %>
+</div>

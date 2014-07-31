@@ -1,0 +1,24 @@
+<div class="container">
+	<h1>Usuarios</h1>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<td>Nombre</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @usuarios.each do |u| %>
+				<tr>
+					<td><%= u.nombre %></td>
+					<td><%= u.email %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to "Nuevo usuario", new_user_path %>
+</div>
+
