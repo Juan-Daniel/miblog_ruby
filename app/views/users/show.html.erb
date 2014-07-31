@@ -1,0 +1,21 @@
+<div class="container">
+	<h1>Usuario <%= @usuario.nombre %> </h1>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<td>Nombre</td>
+				<td>Email</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td><%= @usuario.nombre %></td>
+				<td><%= @usuario.email %></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<%= link_to "Volver", users_path %>
+</div>

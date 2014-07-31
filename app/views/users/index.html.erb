@@ -14,6 +14,8 @@
 				<tr>
 					<td><%= u.nombre %></td>
 					<td><%= u.email %></td>
+					<td><%= link_to 'Ver', user_path(u) %></td>
+					<td><%= link_to 'Editar', edit_user_path(u) %></td>
 					<td><%= link_to 'Eliminar', user_path(u), method: :delete, data: {confirm: '¿Estas seguro?'} %></td>
 				</tr>
 			<% end %>
