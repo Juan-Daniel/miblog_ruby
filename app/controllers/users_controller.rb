@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   	redirect_to users_path
   end
 
+
   def show
   	@usuario=User.find(params[:id])
   end
@@ -49,6 +50,6 @@ class UsersController < ApplicationController
 
   private
 	  def user_params
-	    params.require(:user).permit(:nombre, :email)
+	    params.require(:usuario).permit(:nombre, :email)
 	  end
 end
