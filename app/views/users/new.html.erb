@@ -1,6 +1,7 @@
 <div class="container">
 	<h1>Nuevo usuario</h1>
 
+
 	<%= form_for :usuario, url: users_path do |u| %>
 		<% if @usuario.errors.any? %>
 			<div id="error_explanation">
@@ -14,27 +15,31 @@
 			</ul>
 		<% end %>
 
-		<div class="form-group">
-			<label><%= u.label :Nombre %></label>
-			<%= u.text_field :nombre, class: "form-control" %>
-		</div>
+		<fieldset>
+			<legend>Introduce los datos</legend>
 
-		<div class="form-group">
-			<label><%= u.label :Email %></label>
-			<%= u.text_field :email, class: "form-control" %>
-		</div>
+			<div class="form-group">
+				<label><%= u.label :Nombre %></label>
+				<%= u.text_field :nombre, class: "form-control" %>
+			</div>
 
-		<div class="form-group">
-			<label><%= u.label :password, 'Password' %></label>
-			<%= u.password_field :password, class: "form-control" %>
-		</div>
+			<div class="form-group">
+				<label><%= u.label :Email %></label>
+				<%= u.text_field :email, class: "form-control" %>
+			</div>
 
-		<div class="form-group">
-			<label><%= u.label :"password_confirmation", 'Repita el password' %></label>
-			<%= u.password_field :password_confirmation, class: "form-control" %>
-		</div>
+			<div class="form-group">
+				<label><%= u.label :password, 'Password' %></label>
+				<%= u.password_field :password, class: "form-control" %>
+			</div>
 
-		<%= u.submit 'Crear usuario', class: "btn btn-primary btn-lg btn-block" %>
+			<div class="form-group">
+				<label><%= u.label :"password_confirmation", 'Repita el password' %></label>
+				<%= u.password_field :password_confirmation, class: "form-control" %>
+			</div>
+
+			<%= u.submit 'Crear usuario', class: "btn btn-primary btn-lg btn-block" %>
+		<fieldset class="scheduler-border">
 	<% end %>
 
 	<%= link_to "Ver Usuarios", users_path %>
